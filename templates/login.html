@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>.login {
+  background: #eceeee;
+  border: 1px solid #42464b;
+  border-radius: 6px;
+  height: 257px;
+  margin: 20px auto 0;
+  width: 298px;
+}
+.login h1 {
+  background-image: linear-gradient(top, #f1f3f3, #d4dae0);
+  border-bottom: 1px solid #a6abaf;
+  border-radius: 6px 6px 0 0;
+  box-sizing: border-box;
+  color: #727678;
+  display: block;
+  height: 43px;
+  font: 600 14px/1 'Open Sans', sans-serif;
+  padding-top: 14px;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.2), 0 1px 0 #fff;
+}
+input[type="password"], input[type="text"] {
+  background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
+  border: 1px solid #a1a3a3;
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 31px 0 0 29px;
+  padding-left: 37px;
+  transition: box-shadow 0.3s;
+  width: 240px;
+}
+input[type="password"]:focus, input[type="text"]:focus {
+  box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
+  outline: 0;
+}
+.show-password {
+  display: block;
+  height: 16px;
+  margin: 26px 0 0 28px;
+  width: 87px;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+  height: 16px;
+  opacity: 0;
+  position: relative;
+  width: 64px;
+}
+input[type="checkbox"]:checked {
+  left: 29px;
+  width: 58px;
+}
+.toggle {
+  background: url(http://i.minus.com/ibitS19pe8PVX6.png) no-repeat;
+  display: block;
+  height: 16px;
+  margin-top: -20px;
+  width: 87px;
+  z-index: -1;
+}
+input[type="checkbox"]:checked + .toggle { background-position: 0 -16px }
+.forgot {
+  color: #7f7f7f;
+  display: inline-block;
+  float: right;
+  font: 12px/1 sans-serif;
+  left: -19px;
+  position: relative;
+  text-decoration: none;
+  top: 5px;
+  transition: color .4s;
+}
+.forgot:hover { color: #3b3b3b }
+input[type="submit"] {
+  width:240px;
+  height:35px;
+  display:block;
+  font-family:Arial, "Helvetica", sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  text-shadow:1px 1px 0px #37a69b;
+  padding-top:6px;
+  margin: 29px 0 0 29px;
+  position:relative;
+  cursor:pointer;
+  border: none;
+  background-color: #37a69b;
+  background-image: linear-gradient(top,#3db0a6,#3111);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+}
+
+.shadow {
+  background: #000;
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 0 20px 10px #000;
+  height: 12px;
+  margin: 30px auto;
+  opacity: 0.2;
+  width: 270px;
+}
+
+
+input[type="submit"]:active {
+  top:3px;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
+}</style>
+
+
+    <!-- Favicon -->
+    <link href=" {% static 'img/favicon.ico' %} " rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href=" {% static 'lib/owlcarousel/assets/owl.carousel.min.css' %} " rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href=" {% static 'css/bootstrap.min.css' %} " rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href=" {% static 'css/style.css' %} " rel="stylesheet">
+</head>
+
+<body>
+
+
+
+    <!-- Navbar Start -->
+<!--    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">-->
+<!--        <a href=" {% static 'index.html' %} " class="navbar-brand d-block d-lg-none">-->
+<!--            <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>CakeZone</h1>-->
+<!--        </a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarCollapse">-->
+<!--            <div class="navbar-nav ms-auto mx-lg-auto py-0">-->
+<!--                <a href=" {% static 'index.html' %} " class="nav-item nav-link">Home</a>-->
+<!--                <a href=" {% static 'about.html' %} " class="nav-item nav-link active">About Us</a>-->
+<!--                <a href=" {% static 'menu.html' %} " class="nav-item nav-link">Menu & Pricing</a>-->
+<!--                <a href=" {% static 'team.html' %} " class="nav-item nav-link">Master Chefs</a>-->
+<!--                <div class="nav-item dropdown">-->
+<!--                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>-->
+<!--                    <div class="dropdown-menu m-0">-->
+<!--                        <a href=" {% static 'service.html' %} " class="dropdown-item">Our Service</a>-->
+<!--                        <a href=" {% static 'testimonial.html' %} " class="dropdown-item">Testimonial</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <a href=" {% static 'contact.html' %} " class="nav-item nav-link">Contact Us</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </nav>-->
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="contaier  p-5 mb-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-3 text-uppercase text-white">LOGIN</h1>
+                <a href=" {% static ' ' %} ">Home</a>
+                <i class="far fa-square text-primary px-2"></i>
+                <a href=" {% static '' %} ">About</a>
+            </div>
+        </div>
+<div class="login-form ">
+    <h2 style="text-align:center;">LOGIN NOW</b></h2><br><br>
+
+    <div class="card bg-dark w-50" style="margin-left:300px" >
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label style="color:white">Username</label>
+                    <input type="text" class="form-control" name="uname" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <label style="color:white">Password</label>
+                    <input type="password" class="form-control" name="pass" placeholder="Password" required>
+                </div>
+                <div class="checkbox">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+                <div class="social-login-content">
+                </div>
+                {% for message in messages %}
+                <div class="alert alert-primary" role="alert">
+                    {{message}}
+                </div>
+                {% endfor %}
+            </form>
+        </div>
+                    <div class="register-link m-t-15 text-center">
+                        <p>Don't have account ? <a href=""> Sign Up Here</a></p>
+                    </div>
+
+            </div>
+    </div>
+
+
+
+    <!-- Footer Start -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src=" {% static 'lib/easing/easing.min.js' %} "></script>
+    <script src=" {% static 'lib/waypoints/waypoints.min.js' %} "></script>
+    <script src=" {% static 'lib/counterup/counterup.min.js' %} "></script>
+    <script src=" {% static 'lib/owlcarousel/owl.carousel.min.js' %} "></script>
+
+    <!-- Template Javascript -->
+    <script src=" {% static 'js/main.js' %} "></script>
+</body>
+
+</html>

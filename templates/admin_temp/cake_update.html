@@ -1,0 +1,30 @@
+{% extends 'admin_temp/base.html' %}
+{% block content %}
+{% load crispy_forms_filters %}
+<div class="col-lg-8">
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">Update Category</strong>
+        </div>
+        <div class="card-body">
+            <div id="pay-invoice">
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token%}
+                        <div class="form-group">
+                            {{form|crispy}}
+                        </div>
+
+                        <div class="form-actions form-group ">
+                            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

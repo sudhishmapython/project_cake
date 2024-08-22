@@ -1,0 +1,32 @@
+{% extends 'user_temp/base.html' %}
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+        {% for i in form %}
+        <div class="col-md-4 p-2">
+            <div class="card">
+                <img src="{{ i.image.url }}" alt="cake" style="width:100%; height:250px;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <h5 class="card-title">$ {{i.price}}</h5>
+
+                    <a href="{% url 'add_cart' i.id %}" class="btn btn-primary">ADD TO CART</a>
+                    <a href="#" class="btn btn-primary">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script type="text/javascript">
+    window.mytest = function() {
+        var isValid = confirm('Are you sure Want to Delete ?');
+        if (!isValid) {
+            event.preventDefault();
+        }
+    }
+</script>
+{% endblock %}
